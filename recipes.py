@@ -121,4 +121,5 @@ def internal_server(error):
     return jsonify({"message": "Problem at local server"}), 500
 
 if __name__ == "__main__":
+    db.create_all()
     app.run(port=5001, debug=True)
