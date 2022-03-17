@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from marshmallow import Schema, fields
 
 
-
 app = Flask(__name__)
 #database user:password@hostname/database name
 app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://james:foxtrot09er@localhost/recipes' 
