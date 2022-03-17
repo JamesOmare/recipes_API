@@ -1,10 +1,7 @@
-from apispec import APISpec
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
-from apispec_webframeworks.flask import FlaskPlugin
-from apispec.ext.marshmallow import MarshmallowPlugin
 from marshmallow import Schema, fields
-from mysqlx import View
+
 
 
 app = Flask(__name__)
