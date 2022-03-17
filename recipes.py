@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from marshmallow import Schema, fields
@@ -5,7 +6,8 @@ from marshmallow import Schema, fields
 
 app = Flask(__name__)
 #database user:password@hostname/database name
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://james:foxtrot09er@localhost/recipes' 
+DATABASE_URL = 'postgresql://james:foxtrot09er@localhost/recipes' 
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
@@ -39,6 +41,10 @@ class RecipeSchema(Schema):
     id = fields.Integer()
     name = fields.String()
     description = fields.String()
+
+@app.route("/")
+def home():
+    return "Welcome"
 
 
 
